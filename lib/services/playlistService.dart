@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
-import 'playlist.dart';
+import '../model/playlist.dart';
 
 class PlaylistService {
-  final String apiUrl = 'http://192.168.0.193:3000/api/playlists';
+  final String apiUrl = 'http://192.168.0.24:3000/api/playlists';
 
   Future<Playlist> fetchPlaylists() async {
     try {

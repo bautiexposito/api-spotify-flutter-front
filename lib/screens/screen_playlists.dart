@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'playlistService.dart';
-import 'playlist.dart';
+import '../services/playlistService.dart';
+import '../model/playlist.dart';
 
 class PlaylistScreen extends StatelessWidget {
   final PlaylistService playlistService = PlaylistService();

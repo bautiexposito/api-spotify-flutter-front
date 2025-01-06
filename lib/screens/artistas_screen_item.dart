@@ -24,17 +24,30 @@ class ArtistasScreenItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Imagen del artista
             Container(
               width: double.infinity,
               height: 250,
               color: cardColor,
               child: Center(
-                child: Image.asset(
-                  'assets/artistas/${args['image']}',
+                child: Image.network(
+                  args['image'],
                   fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(
+                      Icons.error,
+                      size: 50,
+                      color: Colors.red,
+                    );
+                  },
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return const Center(child: CircularProgressIndicator());
+                  },
                 ),
               ),
             ),
+            // Detalles del artista
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -46,41 +59,56 @@ class ArtistasScreenItem extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Nombre del artista
                         Text(
                           args['name'],
-                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: textColor),
+                          style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
                         ),
                         const SizedBox(height: 8),
+                        // Oyentes mensuales
                         Text(
                           '${args['listeners']} oyentes mensuales',
                           style: TextStyle(fontSize: 16, color: textColor),
                         ),
                         const SizedBox(height: 8),
+                        // Estado de verificacion
                         Text(
                           args['verificado'] ? 'Verificado' : '',
                           style: TextStyle(fontSize: 16, color: Colors.blue),
                         ),
                         const SizedBox(height: 16),
+                        // Genero musical
                         Text(
                           '${args['genre']} 100%',
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: textColor),
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
                         ),
                         const SizedBox(height: 16),
+                        // Publicado por
                         Row(
                           children: [
-                            Icon(Icons.account_circle, size: 40, color: iconColor),
+                            Icon(Icons.account_circle,
+                                size: 40, color: iconColor),
                             const SizedBox(width: 8),
                             Text(
                               'Publicado por ${args['name']}',
-                              style: TextStyle(fontSize: 14, color: textColor),
+                              style:
+                                  TextStyle(fontSize: 14, color: textColor),
                             ),
                           ],
                         ),
                         const SizedBox(height: 16),
+                        // Iconos de redes sociales
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.alternate_email, size: 30, color: iconColor),
+                            Icon(Icons.alternate_email,
+                                size: 30, color: iconColor),
                             Icon(Icons.camera_alt, size: 30, color: iconColor),
                             Icon(Icons.facebook, size: 30, color: iconColor),
                           ],

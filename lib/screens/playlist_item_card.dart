@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'playlist.dart';
+import '../model/playlist.dart';
 
 class PlaylistScreenItem extends StatelessWidget {
   const PlaylistScreenItem({super.key});
