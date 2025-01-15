@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ArtistasScreenItem extends StatelessWidget {
@@ -11,6 +12,18 @@ class ArtistasScreenItem extends StatelessWidget {
     final cardColor = Theme.of(context).cardColor;
     final textColor = Theme.of(context).textTheme.bodyLarge!.color;
     final iconColor = Theme.of(context).iconTheme.color;
+
+    final List<String> imagePaths = [
+      'assets/artistas/artista-hombre-1.jpg',
+      'assets/artistas/artista-hombre-2.jpg',
+      'assets/artistas/artista-hombre-3.jpg',
+      'assets/artistas/artista-hombre-4.jpg',
+      'assets/artistas/artista-hombre-5.jpg',
+      'assets/artistas/artista-mujer-1.jpg',
+      'assets/artistas/artista-mujer-2.jpg',
+    ];
+
+    final randomImage = imagePaths[Random().nextInt(imagePaths.length)];
 
     return Scaffold(
       appBar: AppBar(
@@ -30,8 +43,8 @@ class ArtistasScreenItem extends StatelessWidget {
               height: 250,
               color: cardColor,
               child: Center(
-                child: Image.network(
-                  args['image'],
+                child: Image.asset(
+                  randomImage, // Utilizamos la imagen seleccionada aleatoriamente
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
                     return const Icon(
@@ -39,10 +52,6 @@ class ArtistasScreenItem extends StatelessWidget {
                       size: 50,
                       color: Colors.red,
                     );
-                  },
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return const Center(child: CircularProgressIndicator());
                   },
                 ),
               ),

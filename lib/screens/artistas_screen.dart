@@ -54,7 +54,7 @@ class _ArtistasScreenState extends State<ArtistasScreen> {
                       context,
                       'artistas_screen_item',
                       arguments: <String, dynamic>{
-                        'image': 'assets/artistas/${artista.id}.png',
+                        'image': 'assets/artistas/pink-logo-spotify.png',
                         'name': artista.nombre,
                         'genre': artista.genero,
                         'listeners': 1000,
@@ -81,9 +81,10 @@ class _ArtistasScreenState extends State<ArtistasScreen> {
                     child: Row(
                       children: [
                         Image.asset(
-                          'assets/artistas/${artista.id}.png',
+                          'assets/artistas/pink-logo-spotify.png',
                           width: 50,
                           height: 50,
+                          fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return const Icon(
                               Icons.error,

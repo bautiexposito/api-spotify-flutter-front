@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../model/artistas.dart';
 
 class ApiService {
-  final String baseUrl = "http://192.168.0.24:3000/api/artistas";
+  final String baseUrl = "http://192.168.1.196:3000/api/artistas";
 
   Future<List<Artista>> getArtistas() async {
     try {
