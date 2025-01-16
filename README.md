@@ -10,10 +10,12 @@ Una aplicación educativa que explora los fundamentos de Flutter, presentando ej
 - Clonar el repositorio (git clone)
 - Navegar al directorio del proyecto (cd flutter_labo_4)
 - Instalar las dependencias (flutter pub get)
+- En el archivo 'assets/.env' modificar el valor de la variable 'ip_personal', definiendo su direccion ip para poder ejecutar el programa de manera local.
 
 ## Ejecución de aplicación
-- Conectar un dispositivo o emulador
-- Ejecutar (flutter run)
+- Ejecutar el backend desarrollado en Node.js: [api-spotify](https://github.com/bautiexposito/api-spotify)
+- Conectar un dispositivo o emulador (yo trabajé con Google Chrome)
+- Ejecutar: flutter run
 
 ## Estructura del proyecto
 - lib/: Contiene el código fuente principal de la aplicación.
@@ -21,7 +23,7 @@ Una aplicación educativa que explora los fundamentos de Flutter, presentando ej
 - pubspec.yaml: Archivo de configuración que especifica las dependencias y activos del proyecto.
 
 ## Documentación de ayuda
-[online documentation](https://docs.flutter.dev/)
+[Online documentation](https://docs.flutter.dev/)
 
 ## Ejemplo de imágenes de la aplicación  
 
