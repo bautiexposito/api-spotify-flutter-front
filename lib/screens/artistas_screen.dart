@@ -118,7 +118,7 @@ class _ArtistasScreenState extends State<ArtistasScreen> {
                           ),
                         ),
                         Icon(
-                          true ? Icons.star : Icons.star_border_outlined,
+                          Icons.star,
                           color: iconColor,
                         ),
                         Text(

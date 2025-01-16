@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../model/artistas.dart';
 
 class ApiService {
-  final String baseUrl = "http://192.168.1.196:3000/api/artistas";
+  final String baseUrl = "http://${dotenv.env['ip_personal']}:3000/api/artistas";
 
   Future<List<Artista>> getArtistas() async {
     try {
